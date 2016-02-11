@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-appaloosa" version="0.1.0">
+
+    <name>Appaloosa</name>
+    <description>Cordova Appaloosa Plugin</description>
+    <license>The MIT License (MIT)</license>
+
+    <keywords>cordova,appaloosa</keywords>
+    <author>Nicolas Hodicq (nhodicq@sqli.com)</author>
+
+    <repo>https://github.com/appaloosa-store/cordova-appaloosa-plugin</repo>
+    <issue>https://github.com/appaloosa-store/cordova-appaloosa-plugin/issues</issue>
+
+    <js-module src="www/Appaloosa.js" name="Appaloosa">
+        <clobbers target="Appaloosa"/>"
+    </js-module>
+
+    <!--<platform name="ios">-->
+    <!--<config-file target="config.xml" parent="/*">-->
+    <!--<feature name="Device">-->
+    <!--<param name="ios-package" value="CDVDevice"/>-->
+    <!--</feature>-->
+    <!--</config-file>-->
+    <!--<header-file src="src/ios/CDVDevice.h" />-->
+    <!--<source-file src="src/ios/CDVDevice.m" />-->
+    <!--</platform>-->
+</plugin>
