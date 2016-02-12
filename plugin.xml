@@ -7,6 +7,7 @@
     <license>The MIT License (MIT)</license>
 
     <keywords>cordova,appaloosa</keywords>
+    <author>SQLI Lab mobilité (su.mobility@sqli.com)</author>
     <author>Nicolas Hodicq (nhodicq@sqli.com)</author>
 
     <repo>https://github.com/appaloosa-store/cordova-appaloosa-plugin</repo>
