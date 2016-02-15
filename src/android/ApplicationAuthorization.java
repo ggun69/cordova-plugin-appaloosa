@@ -24,6 +24,6 @@ public class ApplicationAuthorization extends Activity implements ApplicationAut
 
     @Override
     public void isNotAuthorized(appaloosa_store.com.appaloosa_android_tools.tools.models.ApplicationAuthorization authorization) {
-        callbackContext.error();
+        callbackContext.error("error");
     }
 }
