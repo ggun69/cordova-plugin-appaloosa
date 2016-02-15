@@ -1,4 +1,4 @@
-package com.Appaloosa.Plugin;
+package com.appaloosa.cordova.plugin;
 //package com.adobe.PhoneGapPlugin;
 
 import android.app.Activity;
@@ -21,7 +21,7 @@ import appaloosa_store.com.appaloosa_android_tools.tools.interfaces.ApplicationA
 /**
  * Created by gsautreau on 12/02/2016.
  */
-public class Appaloosa_Phonegap extends CordovaPlugin {
+public class AppaloosaPhonegap extends CordovaPlugin {
 	
     Boolean initDone = false;
     Activity _activity;

@@ -1,4 +1,4 @@
-package com.Appaloosa.Plugin;
+package com.appaloosa.cordova.plugin;
 
 import android.app.Activity;
 
