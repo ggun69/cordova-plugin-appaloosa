@@ -16,6 +16,34 @@
     <js-module src="www/Appaloosa.js" name="Appaloosa">
         <clobbers target="Appaloosa"/>"
     </js-module>
+	
+	
+	 <!-- ANDROID PLATFORM -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppaloosaPhonegap">
+                <param name="android-package" value="com.appaloosa.cordova.plugin.AppaloosaPhonegap"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <!--PERMISSIONS-->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        </config-file>
+
+        <!-- CORDOVA SOURCE FILES -->
+        <source-file src="src/android/AppaloosaPhonegap.java" target-dir="src/com/Appaloosa/Plugin" />
+        <source-file src="src/android/ApplicationAuthorization.java" target-dir="src/com/Appaloosa/Plugin" />
+
+        <!-- ADDTIONNAL LIBRAIRIES -->
+        <source-file src="libs/android/appaloosa-android-tools-0.3.3.jar" target-dir="libs/" />
+
+    </platform>
 
     <!--<platform name="ios">-->
     <!--<config-file target="config.xml" parent="/*">-->
