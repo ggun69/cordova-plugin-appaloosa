@@ -34,8 +34,6 @@ public class AppaloosaPhonegap extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        final CallbackContext _cb = callbackContext;
-
         if(action.equals("init")){
             Appaloosa.init(_activity.getApplication(), args.getInt(0), args.getString(1));
             callbackContext.success("Init done");
@@ -44,10 +42,39 @@ public class AppaloosaPhonegap extends CordovaPlugin {
         else if(action.equals("checkBlackList")){
             ApplicationAuthorizationCustom myAppAuthorization = new ApplicationAuthorizationCustom(callbackContext);
             Appaloosa.checkBlacklist(myAppAuthorization);
+            return true;
+        }
+        else if(action.equals("startAnalytics")){
+            try{
+                Appaloosa.startAnalytics();
+                callbackContext.success();
+            }
+            catch (Exception e) {
+                callbackContext.error("Fail set auto update.");
+            }
+            callbackContext.error("not possible to start analytics");
+        }
+        else if(action.equals("autoUpdate")) {
+            try {
+                Appaloosa.autoUpdate(_activity);
+                callbackContext.success();
+            } catch (Exception e) {
+                callbackContext.error("Fail set auto update.");
+            }
+        }
+        else if(action.equals("autoUpdateWithMessage")){
+            try{
+                Appaloosa.autoUpdateWithMessage(_activity, args.getString(0), args.getString(1));
+                callbackContext.success();
+            }
+            catch (Exception e){
+                callbackContext.error("Check your parameters.");
+            }
         }
         return false;
     }
 
+	
 
 }
 
