@@ -72,7 +72,7 @@ public class AppaloosaPhonegap extends CordovaPlugin {
             }
         }
         else if(action.equals("closeApplication")) {
-            Appaloosa.closeApplication(this);
+            Appaloosa.closeApplication(_activity);
         }
         return false;
     }
