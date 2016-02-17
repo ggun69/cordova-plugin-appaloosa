@@ -103,6 +103,10 @@ angular.module('starter.service', [])
         }
     }
 
+    function closeApplication(){
+        _Appaloosa.closeApplication();
+    }
+
 
     // ####################################### //
     // ################# API ################# //
@@ -113,6 +117,7 @@ angular.module('starter.service', [])
         checkBlacklist          : checkBlacklist,
         startAnalytics          : startAnalytics,
         autoUpdate              : autoUpdate,
-        autoUpdateWithMessage   : autoUpdateWithMessage
+        autoUpdateWithMessage   : autoUpdateWithMessage,
+        closeApplication        : closeApplication
     };
 });

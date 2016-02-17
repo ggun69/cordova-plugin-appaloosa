@@ -71,6 +71,9 @@ public class AppaloosaPhonegap extends CordovaPlugin {
                 callbackContext.error("Check your parameters.");
             }
         }
+        else if(action.equals("closeApplication")) {
+            Appaloosa.closeApplication(this);
+        }
         return false;
     }
 

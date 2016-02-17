@@ -23,6 +23,10 @@ var Appaloosa = {
 	
 	autoUpdateWithMessage : function (title, message, onSuccess, onError){
 		return exec(onSuccess, onError, "AppaloosaPhonegap", "autoUpdateWithMessage", [title, message]);
+	},
+
+	closeApplication : function (){
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "closeApplication", []);
 	}
 };
 
