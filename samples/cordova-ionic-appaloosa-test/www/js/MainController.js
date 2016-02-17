@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-    .controller('MainController', function($scope) {
+    .controller('MainController', function($scope,AppaloosaService) {
 
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -12,6 +12,11 @@ angular.module('starter.controllers', [])
         // Form data for the login modal
 
         $scope.testController = "testController";
+
+        AppaloosaService.init();
+        AppaloosaService.checkBlacklist();
+        AppaloosaService.startAnalytics();
+        AppaloosaService.autoUpdateWithMessage("Updata available", "Your app have to be updated")
 
         console.log(window);
 
