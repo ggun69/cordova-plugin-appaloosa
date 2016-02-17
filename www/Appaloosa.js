@@ -6,7 +6,7 @@ var exec = require('cordova/exec');
 
 var Appaloosa = {
 	initialisation : function (appaloosaStoreId, AppaloosaStoreToken, onSuccess, onError) {
-        return exec(onSuccess, onError, "Appaloosa_Phonegap", "init", [appaloosaStoreId, AppaloosaStoreToken]);
+        return exec(onSuccess, onError, "AppaloosaPhonegap", "init", [appaloosaStoreId, AppaloosaStoreToken]);
     }
 };
 

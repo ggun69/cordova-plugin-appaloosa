@@ -37,11 +37,11 @@
         </config-file>
 
         <!-- CORDOVA SOURCE FILES -->
-        <source-file src="src/android/AppaloosaPhonegap.java" target-dir="src/com/Appaloosa/Plugin" />
-        <source-file src="src/android/ApplicationAuthorization.java" target-dir="src/com/Appaloosa/Plugin" />
+        <source-file src="src/android/AppaloosaPhonegap.java" target-dir="src/com/appaloosa/cordova/plugin" />
+        <source-file src="src/android/ApplicationAuthorizationCustom.java" target-dir="src/com/appaloosa/cordova/plugin" />
 
         <!-- ADDTIONNAL LIBRAIRIES -->
-        <source-file src="libs/android/appaloosa-android-tools-0.3.3.jar" target-dir="libs/" />
+		<framework src="src/android/appaloosa.gradle" custom="true" type="gradleReference" />
 
     </platform>
 

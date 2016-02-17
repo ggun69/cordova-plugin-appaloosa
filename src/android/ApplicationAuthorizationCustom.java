@@ -4,16 +4,18 @@ import android.app.Activity;
 
 import org.apache.cordova.CallbackContext;
 
+import appaloosa_store.com.appaloosa_android_tools.Appaloosa;
 import appaloosa_store.com.appaloosa_android_tools.tools.interfaces.ApplicationAuthorizationInterface;
+import appaloosa_store.com.appaloosa_android_tools.tools.models.ApplicationAuthorization;
 
 /**
  * Created by gsautreau on 15/02/2016.
  */
-public class ApplicationAuthorization extends Activity implements ApplicationAuthorizationInterface {
+public class ApplicationAuthorizationCustom extends Activity implements ApplicationAuthorizationInterface {
 
     CallbackContext callbackContext;
 
-    public ApplicationAuthorization(CallbackContext cbContext){
+    public ApplicationAuthorizationCustom(CallbackContext cbContext){
         callbackContext = cbContext;
     }
 
