@@ -20,12 +20,12 @@ public class ApplicationAuthorizationCustom extends Activity implements Applicat
     }
 
     @Override
-    public void isAuthorized(appaloosa_store.com.appaloosa_android_tools.tools.models.ApplicationAuthorization authorization) {
-        callbackContext.success();
+    public void isAuthorized(ApplicationAuthorization authorization) {
+        callbackContext.success(authorization.getStatus());
     }
 
     @Override
-    public void isNotAuthorized(appaloosa_store.com.appaloosa_android_tools.tools.models.ApplicationAuthorization authorization) {
-        callbackContext.error("error");
+    public void isNotAuthorized(ApplicationAuthorization authorization) {
+        callbackContext.error("error :" + authorization.getStatus());
     }
 }
