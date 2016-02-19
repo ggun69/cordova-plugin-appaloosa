@@ -53,6 +53,22 @@ var Appaloosa = {
 	 */
 	closeApplication : function (){
 		return exec(onSuccess, onError, "AppaloosaPhonegap", "closeApplication", []);
+	},
+	
+	/**
+	 * All authorizations status
+	 */
+	
+	status : {
+		UNKNOWN_APPLICATION : 'UNKNOWN_APPLICATION',
+        AUTHORIZED : 'AUTHORIZED',
+        UNREGISTERED_DEVICE : 'UNREGISTERED_DEVICE',
+        UNKNOWN_DEVICE : 'UNKNOWN_DEVICE',
+        NOT_AUTHORIZED : 'NOT_AUTHORIZED',
+        DEVICE_ID_FORMAT_ERROR : 'DEVICE_ID_FORMAT_ERROR',
+        NO_NETWORK : 'NO_NETWORK',
+        REQUEST_ERROR : 'REQUEST_ERROR',
+        UNKNOWN : 'UNKNOWN'
 	}
 };
 
