@@ -27,13 +27,13 @@ Save it if you want plugin will be added with `cordova prepare` in the futur
 $ cordova plugin -save
 ```
 ## Utilisation
-When the plugin will be added in the app, you can access to the APIs in `window.cordova` object.
+When the plugin will be added in the app, you can access to the APIs in `window.cordova.Appaloosa` object.
 A sample is available [on this repo][repoSample] HAVE TO BE UPDATED!!
 
 ###Initialization
 Add the following line at the start of your application
 ```
- _Appaloosa.initialisation(YOUR_APPALOOSA_STORE_ID, YOUR_APPALOOSA_STORE_TOKEN, functionOnSucess,functionOnError);
+ Appaloosa.initialisation(YOUR_APPALOOSA_STORE_ID, YOUR_APPALOOSA_STORE_TOKEN, functionOnSucess,functionOnError);
 ```
 
 ###Authorization
