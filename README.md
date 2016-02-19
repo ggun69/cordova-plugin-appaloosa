@@ -27,7 +27,7 @@ Save it if you want plugin will be added with `cordova prepare` in the futur
 $ cordova plugin -save
 ```
 ## Utilisation
-When the plugin will be added in the app, you can access to the APIs in `window.cordova.Appaloosa` object.
+When the plugin will be added in the app, you can access to the APIs in `window.Appaloosa` object.
 A sample is available [on this repo][repoSample] HAVE TO BE UPDATED!!
 
 ###Initialization
