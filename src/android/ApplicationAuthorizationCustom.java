@@ -26,6 +26,6 @@ public class ApplicationAuthorizationCustom extends Activity implements Applicat
 
     @Override
     public void isNotAuthorized(ApplicationAuthorization authorization) {
-        callbackContext.error("error :" + authorization.getStatus());
+        callbackContext.error(authorization.getStatus());
     }
 }
