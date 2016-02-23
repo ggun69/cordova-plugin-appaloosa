@@ -87,7 +87,7 @@
     <header-file src="libs/ios/SFHFKeychainUtils.h" />
     <source-file src="libs/ios/SFHFKeychainUtils.m" />
 
-    <!-- separator library -->
+    <!-- OTAppaloosa library -->
 
     <resource-file src="libs/ios/OTAppaloosa/Resources/Images/btn_bottomDevPanel.png" />
     <resource-file src="libs/ios/OTAppaloosa/Resources/Images/btn_bottomDevPanel@2x.png" />
@@ -122,6 +122,30 @@
     <source-file src="libs/ios/OTAppaloosa/Classes/Model/OTApplicationAuthorization.m" />
     <header-file src="libs/ios/OTAppaloosa/Classes/Model/OTApplicationUpdate.h" />
     <source-file src="libs/ios/OTAppaloosa/Classes/Model/OTApplicationUpdate.m" />
+
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaService.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaService.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaSystemPropertyService.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaSystemPropertyService.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaUrlHelper.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaUrlHelper.m" />
+
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/NSString+URLEncoding.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/NSString+URLEncoding.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaActionButtonUtil.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaActionButtonUtil.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaUtils.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/OTAppaloosaUtils.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/UIColor+Appaloosa.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/UIColor+Appaloosa.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/Service/UIViewController+CurrentPresentedController.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/Service/UIViewController+CurrentPresentedController.m" />
+
+    <header-file src="libs/ios/OTAppaloosa/Classes/View/SSTextView.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/View/SSTextView.m" />
+    <header-file src="libs/ios/OTAppaloosa/Classes/View/Cell/ConfigPropertyCell/OTConfigPropertyCell.h" />
+    <source-file src="libs/ios/OTAppaloosa/Classes/View/Cell/ConfigPropertyCell/OTConfigPropertyCell.m" />
+    <resource-file src="libs/ios/OTAppaloosa/Classes/View/Cell/ConfigPropertyCell/OTConfigPropertyCell.xib" />
 
     </platform>
 </plugin>
