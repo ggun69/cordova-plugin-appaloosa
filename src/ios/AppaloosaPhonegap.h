@@ -2,6 +2,6 @@
 
 @interface AppaloosaPhonegap : CDVPlugin
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
+- (void)init:(CDVInvokedUrlCommand*)command;
 
 @end

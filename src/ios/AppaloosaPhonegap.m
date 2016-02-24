@@ -3,13 +3,14 @@
 
 @implementation AppaloosaPhonegap
 
-- (void)initilise:(CDVInvokedUrlCommand*)command
+- (void)init:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
+    int storeId = [command.arguments objectAtIndex:0];
+    NSString* storeToken = [command.arguments objectAtIndex:1];
 
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
+    if (storeToken != nil && [storeToken length] > 0) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:storeToken];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
