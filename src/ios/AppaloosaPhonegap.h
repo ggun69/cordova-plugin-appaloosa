@@ -1,7 +1,8 @@
+#import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
 
 @interface AppaloosaPhonegap : CDVPlugin
 
-- (void)init:(CDVInvokedUrlCommand*)command;
+- (void)initialisation:(CDVInvokedUrlCommand*)command;
 
 @end

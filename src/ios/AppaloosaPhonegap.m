@@ -3,7 +3,7 @@
 
 @implementation AppaloosaPhonegap
 
-- (void)init:(CDVInvokedUrlCommand*)command
+- (void)initialisation:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
     int storeId = [command.arguments objectAtIndex:0];

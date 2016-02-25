@@ -13,7 +13,7 @@ var Appaloosa = {
 	 * @param onError callback
 	 */
 	initialisation : function (appaloosaStoreId, AppaloosaStoreToken, onSuccess, onError) {
-        return exec(onSuccess, onError, "AppaloosaPhonegap", "init", [appaloosaStoreId, AppaloosaStoreToken]);
+        return exec(onSuccess, onError, "AppaloosaPhonegap", "initialisation", [appaloosaStoreId, AppaloosaStoreToken]);
     },
 
 	/**
