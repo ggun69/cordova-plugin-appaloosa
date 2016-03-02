@@ -46,9 +46,10 @@
     </platform>
 
     <platform name="ios">
-    <config-file parent='/*' target='config.xml'>
-      <feature name='AppaloosaPhonegap'>
-        <param name='ios-package' value='AppaloosaPhonegap'/>
+    <config-file parent="/*" target="config.xml">
+      <feature name="AppaloosaPhonegap">
+        <param name="ios-package" value="AppaloosaPhonegap"/>
+        <param name="onload" value="true" />
       </feature>
     </config-file>
 
