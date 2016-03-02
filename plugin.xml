@@ -53,6 +53,9 @@
       </feature>
     </config-file>
 
+    <header-file src="src/ios/AppaloosaPhonegap.h" />
+    <source-file src="src/ios/AppaloosaPhonegap.m" />
+
     <header-file src="libs/ios/TPKeyboardAvoidingCollectionView.h" />
     <source-file src="libs/ios/TPKeyboardAvoidingCollectionView.m" />
 
