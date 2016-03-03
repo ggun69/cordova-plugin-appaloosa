@@ -33,9 +33,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"%@", exception.reason);
-    }
-    @finally {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
 
 }
@@ -50,8 +48,6 @@
     }
     @catch (NSException *exception) {
         NSLog(@"%@", exception.reason);
-    }
-    @finally {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
 }
