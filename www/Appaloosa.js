@@ -21,8 +21,8 @@ var Appaloosa = {
 	 * Via Appaloosa web admin on https://www.appaloosa-store.com, you can manage a per device access. It works by sending device information to the Appaloosa servers.
 	 * In case of an offline access to your app, the status is read from a protected file on the device.
 	 */
-	checkBlacklist : function (onSuccess, onError){
-		return exec(onSuccess, onError, "AppaloosaPhonegap", "checkBlackList", []);
+	authorization : function (onSuccess, onError){
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "authorization", []);
 	},
 
 	/**
