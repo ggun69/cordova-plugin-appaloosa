@@ -6,4 +6,8 @@
 
 - (void)initialisation:(CDVInvokedUrlCommand*)command;
 
+- (void)autoUpdate:(CDVInvokedUrlCommand*)command;
+
+- (void)authorization :(CDVInvokedUrlCommand*)command;
+
 @end

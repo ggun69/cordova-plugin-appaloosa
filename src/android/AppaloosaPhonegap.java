@@ -39,7 +39,7 @@ public class AppaloosaPhonegap extends CordovaPlugin {
             callbackContext.success("Init done");
             return true;
         }
-        else if(action.equals("checkBlackList")){
+        else if(action.equals("authorization")){
             ApplicationAuthorizationCustom myAppAuthorization = new ApplicationAuthorizationCustom(callbackContext);
             Appaloosa.checkBlacklist(myAppAuthorization);
             return true;
