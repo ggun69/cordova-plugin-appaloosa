@@ -31,7 +31,6 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"ok"];
     }
     @catch (NSException *exception) {
-        NSLog(@"%@", exception.reason);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
     @finally {
@@ -49,7 +48,6 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK] messageAsString:@"authorized";
     }
     @catch (NSException *exception) {
-        NSLog(@"%@", exception.reason);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
     @finally {
