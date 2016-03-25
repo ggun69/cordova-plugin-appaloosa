@@ -14,7 +14,6 @@
         [[OTAppaloosaAgent sharedAgent] registerWithStoreId:[storeId stringValue]
                                              storeToken:storeToken
                                             andDelegate:self];
-                                            NSLog(@"INIT DONE \n");
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:storeToken];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
@@ -51,7 +50,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"%@", exception.reason);
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
     @finally {
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
