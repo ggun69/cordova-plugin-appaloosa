@@ -34,12 +34,12 @@ public class AppaloosaPhonegap extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if(action.equals("init")){
+        if(action.equals("initialisation")){
             Appaloosa.init(_activity.getApplication(), args.getInt(0), args.getString(1));
             callbackContext.success("Init done");
             return true;
         }
-        else if(action.equals("checkBlackList")){
+        else if(action.equals("authorization")){
             ApplicationAuthorizationCustom myAppAuthorization = new ApplicationAuthorizationCustom(callbackContext);
             Appaloosa.checkBlacklist(myAppAuthorization);
             return true;
