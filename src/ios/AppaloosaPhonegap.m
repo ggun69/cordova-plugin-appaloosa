@@ -35,6 +35,9 @@
         NSLog(@"%@", exception.reason);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
 
 }
 
@@ -44,11 +47,14 @@
     
     @try {
         [[OTAppaloosaAgent sharedAgent] checkAuthorizations];
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK] messageAsString:@"authorized";
     }
     @catch (NSException *exception) {
         NSLog(@"%@", exception.reason);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }
 }
 
