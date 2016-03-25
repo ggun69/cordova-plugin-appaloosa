@@ -39,26 +39,26 @@ Add the following line at the start of your application
 ###Authorization
 This library provides an app authorization mechanism. Via Appaloosa web admin on https://www.appaloosa-store.com, you can manage a per device access. It works by sending device information to the Appaloosa servers. In case of an offline access to your app, the status is read from a protected file on the device.
 ```
- Appaloosa.checkBlacklist(functionOnSucess,functionOnError);
+ Appaloosa.authorization(functionOnSuccess,functionOnError);
 ```
 The twice function have status in parameters. Use it and the ``Appaloosa.status`` to compare return value.
 
 ###Analytics
 
-To record analytics on your app usage, simply add the following line at the start of your application. Be careful to be authorized before with `Appaloosa.checkBlacklist` function.
+To record analytics on your app usage, simply add the following line at the start of your application. Be careful to be authorized before with `Appaloosa.authorization` function.
 
 ```
- Appaloosa.startAnalytics(functionOnSucess,functionOnError);
+ Appaloosa.startAnalytics(functionOnSuccess,functionOnError);
 ```
 ###Auto-Update
 This library allows you to encourage updates by forcing the download of the new update when the application starts. Simply add the following line to your code :
 
 ```
- Appaloosa.autoUpdate(functionOnSucess,functionOnError);
+ Appaloosa.autoUpdate(functionOnSuccess,functionOnError);
 ```
 If your prefer to leave the choice to the user to download or not the update, the following method will suit your needs :
 ```
- Appaloosa.autoUpdateWithMessage(title, message, functionOnSucess,functionOnError);
+ Appaloosa.autoUpdateWithMessage(title, message, functionOnSuccess,functionOnError);
 ```
 
 
