@@ -61,6 +61,14 @@ If your prefer to leave the choice to the user to download or not the update, th
  Appaloosa.autoUpdateWithMessage(title, message, functionOnSucess,functionOnError);
 ```
 
+##iOS
+
+###Check if the device is jailbroken
+To prevent your app from running on a jailbroken device, simply add the following line to your code :
+
+```
+ Appaloosa.blockJailbrokenDevice();
+```
 
 [repoOfficial]: <https://github.com/appaloosa-store/appaloosa-android-tools>
 [repoSample]:<https://github.com/appaloosa-store/appaloosa-android-tools>

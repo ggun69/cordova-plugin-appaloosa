@@ -10,4 +10,6 @@
 
 - (void)authorization :(CDVInvokedUrlCommand*)command;
 
+- (void)blockJailbrokenDevice :(CDVInvokedUrlCommand*)command;
+
 @end

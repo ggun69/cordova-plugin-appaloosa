@@ -55,4 +55,20 @@
     }
 }
 
+- (void)blockJailbrokenDevice:(CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = nil;
+    
+    @try {
+        [[OTAppaloosaAgent sharedAgent] blockJailbrokenDevice];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK] messageAsString:@"";
+    }
+    @catch (NSException *exception) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
+}
+
 @end

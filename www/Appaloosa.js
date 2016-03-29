@@ -56,6 +56,14 @@ var Appaloosa = {
 	},
 	
 	/**
+	 * Close application
+	 */
+	blockJailbrokenDevice : function (){
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "blockJailbrokenDevice", []);
+	},
+
+	
+	/**
 	 * All authorizations status
 	 */
 	
