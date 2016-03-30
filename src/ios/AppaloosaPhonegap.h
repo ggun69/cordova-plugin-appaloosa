@@ -12,4 +12,6 @@
 
 - (NSString*) convertToString:(OTAppaloosaAutorizationsStatus) whichStatus;
 
+- (void)devPanelWithDefaultButtonAtPosition: (CDVInvokedUrlCommand*)command;
+
 @end

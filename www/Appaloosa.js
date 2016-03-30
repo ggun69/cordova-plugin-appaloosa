@@ -54,6 +54,10 @@ var Appaloosa = {
 	closeApplication : function (){
 		return exec(onSuccess, onError, "AppaloosaPhonegap", "closeApplication", []);
 	},
+
+	devPanelWithDefaultButtonAtPosition: function(position, onSuccess, onError){
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "devPanelWithDefaultButtonAtPosition", [position]);
+	},
 	
 	/**
 	 * All authorizations status

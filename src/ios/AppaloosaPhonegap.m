@@ -111,4 +111,30 @@ CDVInvokedUrlCommand* commandAuthorization = nil;
     return status;
 }
 
+
+- (void)devPanelWithDefaultButtonAtPosition: (CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = nil;
+    NSString* position = [command.arguments objectAtIndex:0];
+
+    @try {
+        if([position isEqualToString:@"rightBottom"]){
+            [[OTAppaloosaAgent sharedAgent] devPanelWithDefaultButtonAtPosition:kAppaloosaButtonPositionRightBottom];
+        }else if([position isEqualToString:@"bottomRight"]){
+            [[OTAppaloosaAgent sharedAgent] devPanelWithDefaultButtonAtPosition:kAppaloosaButtonPositionBottomRight];
+        }
+        else{
+            NSLog(@"Error position dev panel");
+        }
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    }
+    @catch (NSException *exception) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
+
+}
+
 @end
