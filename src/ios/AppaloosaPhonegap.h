@@ -10,4 +10,6 @@
 
 - (void)authorization :(CDVInvokedUrlCommand*)command;
 
+- (NSString*) convertToString:(OTAppaloosaAutorizationsStatus) whichStatus;
+
 @end
