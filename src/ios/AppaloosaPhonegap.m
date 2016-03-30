@@ -4,6 +4,8 @@
 
 @implementation AppaloosaPhonegap
 
+CDVInvokedUrlCommand* commandAuthorization = nil;
+
 - (void)initialisation:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
@@ -41,18 +43,72 @@
 
 - (void)authorization:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult = nil;
+    commandAuthorization = command;
+    NSLog(@"authorization");
     
     @try {
         [[OTAppaloosaAgent sharedAgent] checkAuthorizations];
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK] messageAsString:@"authorized";
     }
     @catch (NSException *exception) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     }
     @finally {
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }
+}
+
+
+- (void)applicationAuthorizationsAllowed{
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"ok"];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:commandAuthorization.callbackId];
+}
+
+- (void)applicationAuthorizationsNotAllowedWithStatus:(OTAppaloosaAutorizationsStatus)status andMessage:(NSString *)message{
+
+    NSLog(@"Authorization error: %@", message);
+    
+    message = [self convertToString:status];
+    
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:message];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:commandAuthorization.callbackId];
+}
+
+- (NSString*) convertToString:(OTAppaloosaAutorizationsStatus) whichStatus {
+    NSString* status = nil;
+    
+    switch (whichStatus) {
+        case OTAppaloosaAutorizationsStatusAuthorized:
+            status = @"AUTHORIZED";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusNotAuthorized:
+            status = @"NOT_AUTHORIZED";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusNoNetwork:
+            status = @"NO_NETWORK";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusRequestError:
+            status = @"REQUEST_ERROR";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusUnknownDevice:
+            status = @"UNKNOWN_DEVICE";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusUnregisteredDevice:
+            status = @"UNREGISTERED_DEVICE";
+            break;
+            
+        case OTAppaloosaAutorizationsStatusUnknown:
+            status = @"UNKNOWN";
+            break;
+            
+        default:
+            break;
+    }
+    
+    return status;
 }
 
 @end

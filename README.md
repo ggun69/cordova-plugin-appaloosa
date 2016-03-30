@@ -43,6 +43,18 @@ This library provides an app authorization mechanism. Via Appaloosa web admin on
 ```
 The twice function have status in parameters. Use it and the ``Appaloosa.status`` to compare return value.
 
+
+####Appaloosa status available:
+* UNKNOWN_APPLICATION
+* AUTHORIZED
+* UNREGISTERED_DEVICE
+* UNKNOWN_DEVICE
+* NOT_AUTHORIZED
+* DEVICE_ID_FORMAT_ERROR
+* NO_NETWORK
+* REQUEST_ERROR
+* UNKNOWN
+
 ###Analytics
 
 To record analytics on your app usage, simply add the following line at the start of your application. Be careful to be authorized before with `Appaloosa.authorization` function.
