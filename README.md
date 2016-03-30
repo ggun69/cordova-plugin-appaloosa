@@ -73,6 +73,15 @@ If your prefer to leave the choice to the user to download or not the update, th
  Appaloosa.autoUpdateWithMessage(title, message, functionOnSuccess,functionOnError);
 ```
 
+## iOS
+###Add the dev panel to your app
+The Appaloosa's SDK also provides a dev panel which gives information about the device and the application. To use it call:
+
+```
+ Appaloosa.devPanelWithDefaultButtonAtPosition(position, functionOnSucess,functionOnError);
+```
+
+The `position` varaible can be positionned on the right side at the bottom, or on the bottom side on the right. To decide where to place it replace `position` variable by ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second
 
 [repoOfficial]: <https://github.com/appaloosa-store/appaloosa-android-tools>
 [repoSample]:<https://github.com/appaloosa-store/appaloosa-android-tools>
