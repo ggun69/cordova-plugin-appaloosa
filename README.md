@@ -45,15 +45,17 @@ The twice function have status in parameters. Use it and the ``Appaloosa.status`
 
 
 ####Appaloosa status available:
-* UNKNOWN_APPLICATION
+* UNKNOWN_APPLICATION*
 * AUTHORIZED
 * UNREGISTERED_DEVICE
 * UNKNOWN_DEVICE
 * NOT_AUTHORIZED
-* DEVICE_ID_FORMAT_ERROR
+* DEVICE_ID_FORMAT_ERROR*
 * NO_NETWORK
 * REQUEST_ERROR
 * UNKNOWN
+
+**Can not be returned because not exist on iOS*
 
 ###Analytics
 
@@ -68,7 +70,7 @@ This library allows you to encourage updates by forcing the download of the new 
 ```
  Appaloosa.autoUpdate(functionOnSuccess,functionOnError);
 ```
-If your prefer to leave the choice to the user to download or not the update, the following method will suit your needs :
+On **Android**, if your prefer to leave the choice to the user to download or not the update, the following method will suit your needs :
 ```
  Appaloosa.autoUpdateWithMessage(title, message, functionOnSuccess,functionOnError);
 ```
