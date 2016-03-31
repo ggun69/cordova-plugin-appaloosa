@@ -81,7 +81,15 @@ The Appaloosa's SDK also provides a dev panel which gives information about the 
  Appaloosa.devPanelWithDefaultButtonAtPosition(position, functionOnSucess,functionOnError);
 ```
 
-The `position` varaible can be positionned on the right side at the bottom, or on the bottom side on the right. To decide where to place it replace `position` variable by ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second
+The `position` variable can be positionned on the right side at the bottom, or on the bottom side on the right. To decide where to place it replace `position` variable by ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second.
+
+If you prefer to use your own button/action to trigger the dev panel, you can use the following line in your onClick:
+
+```
+ Appaloosa.openDevPanelController(functionOnSucess,functionOnError);
+```
+Think to init with `Appaloosa.initialisation` function before call it.
+
 
 [repoOfficial]: <https://github.com/appaloosa-store/appaloosa-android-tools>
 [repoSample]:<https://github.com/appaloosa-store/appaloosa-android-tools>

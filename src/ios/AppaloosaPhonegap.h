@@ -14,4 +14,6 @@
 
 - (void)devPanelWithDefaultButtonAtPosition: (CDVInvokedUrlCommand*)command;
 
+- (void)openDevPanelController: (CDVInvokedUrlCommand*)command;
+
 @end

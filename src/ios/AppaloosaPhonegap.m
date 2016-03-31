@@ -137,4 +137,21 @@ CDVInvokedUrlCommand* commandAuthorization = nil;
 
 }
 
+
+- (void)openDevPanelController: (CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = nil;
+    
+    @try {
+        [[OTAppaloosaAgent sharedAgent] openDevPanelController];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    }
+    @catch (NSException *exception) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
+}
+
 @end
