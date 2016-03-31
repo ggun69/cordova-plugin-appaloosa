@@ -45,15 +45,17 @@ The twice function have status in parameters. Use it and the ``Appaloosa.status`
 
 
 ####Appaloosa status available:
-* UNKNOWN_APPLICATION
+* UNKNOWN_APPLICATION*
 * AUTHORIZED
 * UNREGISTERED_DEVICE
 * UNKNOWN_DEVICE
 * NOT_AUTHORIZED
-* DEVICE_ID_FORMAT_ERROR
+* DEVICE_ID_FORMAT_ERROR*
 * NO_NETWORK
 * REQUEST_ERROR
 * UNKNOWN
+
+**Can not be returned because not exist on iOS*
 
 ###Analytics
 
@@ -68,7 +70,7 @@ This library allows you to encourage updates by forcing the download of the new 
 ```
  Appaloosa.autoUpdate(functionOnSuccess,functionOnError);
 ```
-If your prefer to leave the choice to the user to download or not the update, the following method will suit your needs :
+On **Android**, if your prefer to leave the choice to the user to download or not the update, the following method will suit your needs :
 ```
  Appaloosa.autoUpdateWithMessage(title, message, functionOnSuccess,functionOnError);
 ```
@@ -81,14 +83,33 @@ The Appaloosa's SDK also provides a dev panel which gives information about the 
  Appaloosa.devPanelWithDefaultButtonAtPosition(position, functionOnSucess,functionOnError);
 ```
 
-The `position` variable can be positionned on the right side at the bottom, or on the bottom side on the right. To decide where to place it replace `position` variable by ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second.
+In order to set the button on the right side at the bottom, or on the bottom side on the right, replace `position` variable with ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second.
 
-If you prefer to use your own button/action to trigger the dev panel, you can use the following line in your onClick:
+If you prefer using your own button/action to trigger the dev panel, you can use the following line in your onClick:
 
 ```
  Appaloosa.openDevPanelController(functionOnSucess,functionOnError);
 ```
 Think to init with `Appaloosa.initialisation` function before call it.
+
+###Add in-app-feedback to your app
+
+The Appaloosa's SDK provides a fully integrated solution to send feedback to your dev team. To use it add the following line:
+
+```
+ Appaloosa.feedbackControllerWithDefaultButtonAtPosition(position, emails, functionOnSuccess,functionOnError);
+```
+
+In order to set the button on the right side at the bottom, or on the bottom side on the right, replace `position` variable with ` "rightBottom" ` for the first position or ` "bottomRight" `  for the second.
+
+The `emails` variable has to be a string separated with a comma like it:
+`"email1@company.com,email2@company.com"`. If uncessary, set `null`.
+
+If you prefer using your own button/action to trigger the dev panel, you can use the following line in your onClick:
+
+```
+ Appaloosa.openFeedbackControllerWithRecipientsEmailArray(emails, functionOnSuccess,functionOnError);
+```
 
 
 [repoOfficial]: <https://github.com/appaloosa-store/appaloosa-android-tools>
