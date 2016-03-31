@@ -25,7 +25,7 @@
 
 // Fmk
 #import <AdSupport/ASIdentifierManager.h>
-#import <Base64/MF_Base64Additions.h>
+#import "MF_Base64Additions.h"
 #import "UIDevice+IdentifierAddition.h"
 
 @implementation OTAppaloosaUtils
