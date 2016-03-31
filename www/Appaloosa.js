@@ -59,7 +59,6 @@ var Appaloosa = {
 		return exec(onSuccess, onError, "AppaloosaPhonegap", "devPanelWithDefaultButtonAtPosition", [position]);
 	},
 
-
 	/**
 	* Trigger the dev panel
 	*/
@@ -67,8 +66,16 @@ var Appaloosa = {
 		return exec(onSuccess, onError, "AppaloosaPhonegap", "openDevPanelController", []);
 	},
 
+
 	feedbackControllerWithDefaultButtonAtPosition: function(position, emailsArray, onSuccess, onError){
-		return exec(onSuccess, onError, "AppaloosaPhonegap", "feedbackControllerWithDefaultButtonAtPosition", [position, JSON.stringify(emailsArray)]);
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "feedbackControllerWithDefaultButtonAtPosition", [position, emailsArray]);
+	},
+
+	/**
+	* Trigger the feedback
+	*/
+	openFeedbackControllerWithRecipientsEmailArray: function(emailsArray, onSuccess, onError){
+		return exec(onSuccess, onError, "AppaloosaPhonegap", "openFeedbackControllerWithRecipientsEmailArray", [emailsArray]);
 	},
 	
 	/**

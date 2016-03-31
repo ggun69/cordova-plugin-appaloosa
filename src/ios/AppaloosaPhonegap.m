@@ -160,7 +160,10 @@ CDVInvokedUrlCommand* commandAuthorization = nil;
     CDVPluginResult* pluginResult = nil;
     NSString* position = [command.arguments objectAtIndex:0];
     NSString* emailsString = [command.arguments objectAtIndex:1];
-    NSArray *emails = [emailsString componentsSeparatedByString: @","];
+    NSArray *emails = nil;
+    if(emailsString && ![emailsString isEqual:[NSNull null]]){
+        emails = [emailsString componentsSeparatedByString: @","];
+    }
 
     @try {
         if([position isEqualToString:@"rightBottom"]){
@@ -179,7 +182,27 @@ CDVInvokedUrlCommand* commandAuthorization = nil;
     @finally {
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }
+}
 
+- (void)openFeedbackControllerWithRecipientsEmailArray: (CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = nil;
+    NSString* emailsString = [command.arguments objectAtIndex:0];
+    NSArray *emails = nil;
+    if(emailsString && ![emailsString isEqual:[NSNull null]]){
+        emails = [emailsString componentsSeparatedByString: @","];
+    }
+    
+    @try {
+        [[OTAppaloosaAgent sharedAgent] openFeedbackControllerWithRecipientsEmailArray:emails];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    }
+    @catch (NSException *exception) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
 }
 
 @end

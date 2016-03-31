@@ -18,4 +18,6 @@
 
 - (void)feedbackControllerWithDefaultButtonAtPosition: (CDVInvokedUrlCommand*)command;
 
+- (void)openFeedbackControllerWithRecipientsEmailArray: (CDVInvokedUrlCommand*)command;
+
 @end
