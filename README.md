@@ -108,6 +108,76 @@ If you prefer using your own button/action to trigger the dev panel, you can use
  Appaloosa.openFeedbackControllerWithRecipientsEmailArray(emails, functionOnSuccess,functionOnError);
 ```
 
+## Example
+
+
+```
+angular.module('starter.service', [])
+    .factory('AppaloosaService', function ($log) {
+
+    var _Appaloosa;
+    var _isInitialized = false;
+	var isAuthorized = false;
+
+    function init(appaloosaStoreId, appaloosaStoreToken) {
+
+        if (window.Appaloosa) {
+
+            _Appaloosa = window.Appaloosa;
+
+            _Appaloosa.initialisation(appaloosaStoreId, appaloosaStoreToken,
+            function(msg){
+                console.log(msg);
+                _isInitialized = true;
+                 _isAuthorized = true;
+                checkAuthorization();
+            },
+            function(){
+                console.log("Initialisation error");
+            });
+        } else {
+            $log.info('Appaloosa is undefined');
+        }
+    }
+
+	function checkAuthorization(){
+       if(_isInitialized){
+           _Appaloosa.authorization(function (status){
+                   console.log("status: " + status);
+                   _isAuthorized = true;
+                   autoUpdate();
+               },
+               function (errorMessage){
+                   console.log("Unauthorized: " + errorMessage);
+               })
+       }
+    }
+
+	function autoUpdate(){
+
+        if(_isInitialized && _isAuthorized){
+	        devPanelWithDefaultButtonAtPosition("bottomRight");  
+	        
+            _Appaloosa.autoUpdate(function (status) {
+                
+                if(status === _Appaloosa.updateStatus.UPDATE_NEEDED){
+                    _Appaloosa.downloadNewVersion(function(){
+                        console.log("Downloading... Done");
+                    },
+                    function(error){
+                        console.log(error);
+                    });
+                }
+
+            }, function (errorMsg) {
+                console.warning("error: " + errorMsg);
+            });
+        }
+        else{
+            $log.info('Veuillez vérifier vos autorisations');
+        }
+    }
+```
 
 [repoOfficial]: <https://github.com/appaloosa-store/appaloosa-android-tools>
 [repoSample]:<https://github.com/appaloosa-store/appaloosa-android-tools>
