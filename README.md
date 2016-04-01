@@ -1,10 +1,7 @@
 
 # Apache Cordova Appaloosa Plugin 
 
-This is a plugin to allow you to use Appaloosa SDK to:
-
-  - Check Update and make user to download new version or let him the choice
-  - Use Appaloosa Analytics
+This is a plugin to allow you to use Appaloosa iOS and Android SDK
 
 Please refer to the [official repository][repoOfficial] to have more information
 
@@ -14,18 +11,18 @@ Please refer to the [official repository][repoOfficial] to have more information
 - A native store must have been created for your account
 - At least one login on the native store
 
+## Supported Platforms
+
+* Android
+* iOS
 
 ## Installation
-Just add the plugin to your app:
 
-```sh
-$ cordova plugin add https://github.com/sqli/cordova-plugin-appaloosa.git
 ```
-Save it if you want plugin will be added with `cordova prepare` in the futur
+cordova plugin add cordova-plugin-appaloosa
+```
 
-```sh
-$ cordova plugin -save
-```
+
 ## Utilisation
 When the plugin will be added in the app, you can access to the APIs in `window.Appaloosa` object.
 A sample is available [on this repo][repoSample] HAVE TO BE UPDATED!!
